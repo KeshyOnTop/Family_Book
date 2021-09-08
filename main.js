@@ -1,20 +1,30 @@
-var images = ["https://i.postimg.cc/MGn9GJXw/family.jpg","https://i.postimg.cc/qqyYvVbq/grandpa.jpg", "https://i.postimg.cc/wjMnFtMX/father.jpg" , "https://i.postimg.cc/5ymDKL83/bro.jpg", "https://i.postimg.cc/JnL6wtrd/sister.jpg", "https://i.postimg.cc/bw5W5zSK/mother.jpg"];
-var names = ["Fmaily Book","Ranbir Singh", "Diljeet Singh", "Rocky Singh", "Alia Singh", "Soni Singh"];
-var i = 0;
-function update()
+
+	name_of_the_student_array = [];
+	
+	function submit()
+	{
+        
+        var name_1 = document.getElementById("name_of_the_student_1").value;
+        var name_2 = document.getElementById("name_of_the_student_2").value;
+        var name_3 = document.getElementById("name_of_the_student_3").value;
+        var name_4 = document.getElementById("name_of_the_student_4").value;
+
+        name_of_the_student_array.push(name_1);
+        name_of_the_student_array.push(name_2);
+        name_of_the_student_array.push(name_3);
+        name_of_the_student_array.push(name_4);
+
+		console.log(name_of_the_student_array);
+		
+        document.getElementById("display_name").innerHTML = name_of_the_student_array;
+        document.getElementById("submit_button").style.display = "none";
+        document.getElementById("sort_button").style.display = "inline-block";
+
+	}
+
+function sorting()
 {
-    i++;
-    var numbers_of_family_member_in_array = 5
-    if(i > numbers_of_family_member_in_array)
-      {
-          i = 0;
-      }
-    
-    //Debug the code to store list of images in updatedImage. Use images[i]
-    var updatedImage = [images];
-    //Debug the code to store list of names in updatedName. Use names[i]
-    var updatedName = [names] ;
- 
-    document.getElementById("").src = updatedImage;
-    document.getElementById("Keshawn").innerHTML = updatedName;
+	name_of_the_student_array.sort();
+    console.log(name_of_the_student_array);
+	document.getElementById("display_name").innerHTML = name_of_the_student_array;
 }
